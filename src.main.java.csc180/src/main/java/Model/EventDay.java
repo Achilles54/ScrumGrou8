@@ -17,6 +17,7 @@ public class EventDay {
 
         setMonth(months[month]);
         setYear(year);
+        //Validation Check
         switch(this.month){
             case Months.JANUARY,MARCH,MAY,JULY,AUGUST,OCTOBER,DECEMBER:
                 if(day >= 1 && day <= 31){
