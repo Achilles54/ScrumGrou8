@@ -3,7 +3,7 @@ package Model;
 public class EventDay {
 
     private static Weekday[] weekdays = {Weekday.MONDAY,Weekday.TUESDAY,Weekday.WEDNESDAY,Weekday.THURSDAY,Weekday.FRIDAY,Weekday.SATURDAY,Weekday.SUNDAY};
-    private static Months[] months = {Months.JANUARY,Months.FEBURARY,Months.MARCH,Months.APRIL,Months.MAY,Months.JUNE,Months.JULY,Months.AUGUST,Months.SEPTEMBER,Months.OCTOBER,Months.NOVEMBER,Months.DECEMBER};
+    private static Months[] months = {Months.JANUARY,Months.FEBURARY,Months.MARCH,Months.APRIL,Months.MAY,Months.JUNE,Months.JULY,Months.AUGUST,Months.SEPTEMBER,Months.OCTOBER,Months.NOVEMBER,Months.DECEMBER,Months.JANUARY,Months.FEBURARY};
     private int day;
     private Months month;
     private int year;
@@ -11,6 +11,8 @@ public class EventDay {
     private String event;
     private String note;
 
+    //IMPORTANT NOTE: JANUARY IS 13 AND FEBURARY IS 14 for the Integer Month value
+    //passed into this constructor. This is to make the weekday formula work.
     public EventDay(int day, int month, int year, String event, String note) {
 
         setMonth(months[month]);
@@ -47,6 +49,8 @@ public class EventDay {
         }
         setEvent(event);
         setNote(note);
+        //COMPLICATED FORMULA USED TO FIND THE DAY OF THE WEEK OF ANY DATE
+        setWeekday(weekdays[(day+((13*(month + 1))/5) + (year%100) + ((year%100)/4) + (((year-(year%100))/100)/4)-2*20)%7]);
     }
 
     private void setDay(int day){
@@ -78,5 +82,11 @@ public class EventDay {
     }
     public String getNote(){
         return note;
+    }
+    private void setWeekday(Weekday weekday){
+        this.weekday = weekday;
+    }
+    public Weekday getWeekday(){
+        return weekday;
     }
 }
