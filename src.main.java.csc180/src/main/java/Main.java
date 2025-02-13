@@ -1,17 +1,22 @@
 import Model.EventDay;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
         ArrayList<EventDay> calander = new ArrayList<>();
-
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("""
                 Welcome to the Calander Project (Console Implementation
                 1. View Events
                 2. Create New Event
                 3. Edit Event
                 4. Quit""");
-
+        try{
+            String response = br.readLine();
+        }
+        switch()
     }
 }
