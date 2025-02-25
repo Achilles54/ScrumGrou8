@@ -25,7 +25,7 @@
             <graphic>
                 <ImageView fitHeight="25.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@left-arrow.png" />
+                        <Image url="@../../../../../../CalanderFX/CalanderFX/src/main/resources/csc180/left-arrow.png" />
                     </image>
                 </ImageView>
             </graphic>
@@ -34,7 +34,7 @@
             <graphic>
                 <ImageView fitHeight="25.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@right-arrow.png" />
+                        <Image url="@../../../../../../CalanderFX/CalanderFX/src/main/resources/csc180/right-arrow.png" />
                     </image>
                 </ImageView>
             </graphic>
@@ -395,10 +395,5 @@
                 </Label>
             </children>
         </GridPane>
-        <Avatar layoutX="16.0" layoutY="348.0" opacity="0.65" style="-fx-background-color: #1f1e1f;">
-            <image>
-                <Image url="@icon-7797704_1280.png" />
-            </image>
-        </Avatar>
     </children>
 </Pane>
