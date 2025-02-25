@@ -21,9 +21,8 @@ public class Main {
             System.out.println("""
                     Welcome to the Calander Project (Console Implementation
                     1. View Events
-                    2. Create New Event
-                    3. Edit Event
-                    4. Quit""");
+                    2. Create New Event/Edit Event
+                    3. Quit""");
             try {
                 String response = br.readLine();
                 int numResponse = Integer.parseInt(response);
@@ -35,9 +34,6 @@ public class Main {
                         createEvent();
                         break;
                     case 3:
-                        editEvent();
-                        break;
-                    case 4:
                         run = false;
                         break;
                     default:
@@ -83,11 +79,12 @@ public class Main {
     }
     public static void createEvent() {
         System.out.println("Please Enter Month of Event in numerical value (january = 1, feburary = 2, etc.)");
+        int month = -1;
         try {
             String userResponse = br.readLine();
             int numResponse = Integer.parseInt(userResponse);
-            if(numResponse >= 1 && numResponse <= months.length){
-                Months month = months[numResponse-1];
+            if (numResponse >= 1 && numResponse <= months.length) {
+                month = numResponse - 1;
             }
             System.out.println("Please Enter Day of Event in numerical value");
             System.out.println();
@@ -98,7 +95,7 @@ public class Main {
             System.out.println("Please enter the description of or notes relating to your event");
             String note = br.readLine();
             int totalDays;
-            switch(numResponse){
+            switch (numResponse) {
                 case 1:
                     totalDays = 0;
                     break;
@@ -138,9 +135,11 @@ public class Main {
                 default:
                     totalDays = 0;
             }
-            calander[totalDays + day] = new EventDay();
+            if (month != -1) {
+                calander[totalDays + day] = new EventDay(day, month, event, note);
+            }
 
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Invalid data");
             createEvent();
         }
