@@ -133,10 +133,12 @@ public class Main {
                     totalDays = 334;
                     break;
                 default:
-                    totalDays = 0;
+                    totalDays = -1;
             }
-            if (month != -1) {
+            if (month != -1 && totalDays != -1) {
                 calander[totalDays + day] = new EventDay(day, month, event, note);
+            }else{
+                System.out.println("Some Data was invalid, returning to menu");
             }
 
         } catch (Exception e) {
