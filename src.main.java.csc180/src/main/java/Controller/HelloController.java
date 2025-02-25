@@ -164,7 +164,7 @@ public class HelloController {
     @FXML
     public void initialize(){
         Months currentMonth = Months.DECEMBER;
-        for (int i = 0; i < 366; i++) {
+        for (int i = 0; i < 365; i++) {
             if (calander[i] != null){
                 if(calander[i].getMonth() != currentMonth){
                     System.out.println(calander[i].getMonth() + ": ");
