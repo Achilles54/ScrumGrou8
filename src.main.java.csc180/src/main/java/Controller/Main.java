@@ -1,13 +1,10 @@
+package Controller;
+
 import Model.EventDay;
 import Model.Months;
-import jdk.jfr.Event;
 
 import java.io.BufferedReader;
-import java.io.Console;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.time.Month;
-import java.util.ArrayList;
 
 public class Main {
     static EventDay[] calander = new EventDay[365];
